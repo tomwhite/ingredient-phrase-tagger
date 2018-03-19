@@ -302,7 +302,7 @@ def export_data(lines):
     """ Parse "raw" ingredient lines into CRF-ready output """
     output = []
     for line in lines:
-        line_clean = re.sub('<[^<]+?>', '', line)
+        line_clean = cleanUnicodeFractions(re.sub('<[^<]+?>', '', line))
         tokens = tokenize(line_clean)
 
         for i, token in enumerate(tokens):
