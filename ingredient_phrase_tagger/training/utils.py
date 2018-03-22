@@ -19,8 +19,9 @@ def tokenize(s):
     s = re.sub(r'(\d+)g', r'\1 grams', s)
     s = re.sub(r'(\d+)oz', r'\1 ounces', s)
     s = re.sub(r'(\d+)ml', r'\1 millilitre', s)
-    s = re.sub(r'tsp\.?', r'teaspoon', s)
-    s = re.sub(r'tbsp\.?', r'tablespoon', s)
+    s = re.sub(r'(\d+)lb', r'\1 pound', s)
+    s = re.sub(r'tsp\.?', r' teaspoon', s)
+    s = re.sub(r'tbsp\.?', r' tablespoon', s)
 
     american_units = ['cup', 'tablespoon', 'teaspoon', 'pound', 'ounce', 'quart', 'pint']
     for unit in american_units:
